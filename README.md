@@ -3,22 +3,12 @@
 Wagtail Localize is a package that will help you set up a translation workflow for your website. It provides a few different options for translation workflows, but one of the most useful features is the ability to sync content from the main language to other languages.
 
 
-## First, a quick migration update
-
-Before we install Wagtail Localize, you'll need to change a migration because there is currently a bug that creates a table conflict in the database with Wagtail Localize. To prevent that headache, execute thise command in your terminal
-
-```
-python manage.py migrate wagtailcore 0058
-```
-
-Do NOT, I repeat, **DO NOT** do a regular migration after executing this command until after you add the configuration for Wagtail Localize. This command reverts the `wagtailcore` migrations back to `wagtailcore 0058` to prevent a table conflict from occurring. This step should hopefully be unnecessary after the next Wagtail release.
-
 ## Install the Wagtail Localize package
 
-For this tutorial, we're going to use Wagtail 4.0 and an alpha version of Wagtail Localize. To install that version of Wagtail Localize, enter the following command in your command line:
+ To install Wagtail Localize, enter the following command in your command line:
 
 ```
-pip install wagtail-localize==1.3a4
+pip install wagtail-localize
 ```
 
 With that update in place and the package installed, now you are going to make some changes to `base.py` and `urls.py`. Most of the steps you're going to perform next come from the [Wagtail Localize documentation](https://www.wagtail-localize.org/). 
@@ -76,7 +66,7 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
 
 ## Add machine translation configuration
 
-Wagtail Localize has a few different options for machine translation. Two common configurations are for Google Cloud Translation and Deepl. Both of those options require setting accounts up with credit cards, so were going to use the dummy translator for this tutorial to show you how things work. But if you want to integrate a machine translator, you can follow the steps in the [Wagtail Localize Documentation](https://www.wagtail-localize.org/how-to/integrations/machine-translation/) to add the configuration for your preferred translator to `base.py`. There is also an integration available for [Pontoon](https://www.wagtail-localize.org/how-to/integrations/pontoon/).
+Wagtail Localize has a few different options for machine translation. Two available integration options include Google Cloud Translation and Deepl. Both of those options require setting accounts up with credit cards, so we're going to use a dummy translator for this tutorial to show you how things work. If you want to integrate a machine translator later on, you can follow the steps in the [Wagtail Localize Documentation](https://www.wagtail-localize.org/how-to/integrations/machine-translation/) to add the configuration for your preferred translator to `base.py`. There is also an integration available for [Pontoon](https://www.wagtail-localize.org/how-to/integrations/pontoon/).
 
 To add the dummy translator, add the following code to your `base.py` file:
 
