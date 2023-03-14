@@ -155,9 +155,9 @@ python manage.py migrate
 ## Check your site
 
 
-Go back to `http://localhost:8000`. If your browser is configured for English or any other language except French,
-you should be redirected to `http://localhost:8000/en/`.
-If your browser is configured in French, you should be redirected to `http://localhost:8000/fr/`.
+Go back to [http://127.0.0.1:8000](http://127.0.0.1:8000). If your browser is configured for English or any other language except French,
+you should be redirected to [http://127.0.0.1:8000/en](http://127.0.0.1:8000/en).
+If your browser is configured in French, you should be redirected to [http://127.0.0.1:8000/fr](http://127.0.0.1:8000/fr).
 
 In either case, you can view the site in `/en/` or `/fr/` (no differences yet).
 
